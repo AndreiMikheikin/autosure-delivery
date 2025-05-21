@@ -1,0 +1,65 @@
+@use 'sass:color';
+
+@mixin respond($breakpoint) {
+    @if $breakpoint ==xsmall {
+        @media (min-width: 500px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==small {
+        @media (min-width: 768px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==medium {
+        @media (min-width: 805px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==large {
+        @media (min-width: 1030px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==xlarge {
+        @media (min-width: 1250px) {
+            @content;
+        }
+    }
+}
+
+// иконки
+@mixin icon-style($color, $size: 1.5rem, $hover-color: null) {
+    color: $color;
+    font-size: $size;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: if($hover-color !=null, $hover-color, color.scale($color, $lightness: 15%));
+    }
+}
+
+// Центровка по флексу
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Вертикальная колонка с отступами
+@mixin flex-column($gap: v.$space-md) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+// Обрезка текста
+@mixin text-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

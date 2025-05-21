@@ -1,0 +1,32 @@
+@use './variables' as v;
+@use './mixins' as m;
+@use './base' as *;
+
+// Глобальные стили
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: v.$bg-primary;
+  color: v.$text-primary;
+  overscroll-behavior: none;
+}
+
+a {
+  color: v.$text-secondary;
+  text-decoration: none;
+}
+
+section {
+  padding: 1rem;
+}
+
+// Эффект растяжения при прокрутке в край
+.stretch {
+  transition: transform 0.2s ease;
+  transform: scaleY(1.02);
+}

@@ -1,0 +1,127 @@
+@use '../variables' as v;
+@use '../mixins' as m;
+
+// aam_header
+.aam_header,
+.aam_footer {
+  @include m.flex-column($gap: v.$space-xl);
+  padding: v.$space-md;
+  background-color: v.$black;
+  color: v.$text-primary;
+  text-align: center;
+  align-items: center;
+
+  @include m.respond(large) {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: v.$space-md;
+    text-align: left;
+  }
+
+  &__info {
+    @include m.flex-column(v.$space-sm);
+
+    @include m.respond(medium) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: v.$space-xl;
+    }
+  }
+
+  &__slogan {
+    color: v.$text-secondary;
+    font-weight: bold;
+    font-size: v.$font-md;
+
+    @include m.respond(xlarge){
+      font-size: v.$font-xl;
+      font-weight: 700
+    }
+  }
+
+  &__contacts {
+    @include m.flex-center;
+    gap: v.$space-sm;
+
+    a {
+      color: v.$text-primary;
+      font-size: v.$font-lg;
+
+      &:hover {
+        color: v.$text-secondary;
+      }
+    }
+
+    @include m.respond(small) {
+      gap: 1.2rem; // можно создать переменную, если хочется
+    }
+  }
+
+  &__phones {
+    @include m.flex-column(v.$space-xs);
+    align-items: center;
+    font-size: 0.95rem; // Можно добавить переменную, например, $font-sm-alt, если часто повторяется
+    color: v.$metal-dark;
+
+    @include m.respond(medium) {
+      align-items: flex-start;
+    }
+  }
+
+  @include m.respond(small) {
+    padding: 1.5rem 2rem;
+  }
+
+  @include m.respond(xlarge) {
+    padding: 2rem 3rem;
+  }
+}
+
+.aam_footer {
+  flex-direction: column;
+  border-top: 2px solid v.$gold;
+  align-items: center;
+  justify-content: space-around;
+  font-size: v.$font-sm;
+
+  @include m.respond(medium) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  @include m.respond(large) {
+    font-size: v.$font-lg;
+  }
+
+  &__contacts {
+    @include m.flex-column(v.$space-xs);
+    align-items: center;
+
+    @include m.respond(medium) {
+      align-items: flex-start;
+    }
+  }
+
+  &__social {
+    display: flex;
+    align-self: center;
+    margin-top: v.$space-sm;
+    gap: v.$space-md;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    justify-self: center;
+  }
+
+  .aam_logo-svg {
+    width: 60%;
+    height: auto;
+    justify-self: center;
+
+    @include m.respond(medium) {
+      justify-self: flex-end;
+    }
+  }
+}

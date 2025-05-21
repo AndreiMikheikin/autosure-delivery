@@ -1,0 +1,107 @@
+@use '../variables' as v;
+@use '../mixins' as m;
+
+// aam_main
+.aam_main {
+  position: relative;
+  @include m.flex-center;
+  justify-content: space-around;
+  gap: v.$space-xl;
+  padding: v.$space-xl;
+  background: url('../../assets/images/MAwithLogo.png') center/cover no-repeat;
+  color: v.$text-primary;
+  text-align: center;
+  overflow: hidden;
+
+  @include m.respond(xlarge) {
+    height: 700px;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: v.$z-overlay;
+  }
+
+  &__content {
+    position: relative;
+    z-index: v.$z-content;
+    max-width: v.$content-narrow-width;
+    width: 100%;
+    @include m.flex-column(v.$space-lg);
+  }
+
+  &__title {
+    font-size: v.$font-xl;
+    color: v.$text-secondary;
+    font-weight: 600;
+
+    @include m.respond(xsmall) {
+      font-size: v.$font-2xl;
+      font-weight: 700;
+    }
+
+    @include m.respond(medium) {
+      font-size: v.$font-3xl;
+    }
+  }
+
+  &__sub-title {
+    font-size: v.$font-md;
+    color: v.$text-primary;
+    font-weight: 400;
+
+    @include m.respond(xsmall) {
+      font-size: v.$font-lg;
+      font-weight: 600;
+    }
+
+    @include m.respond(medium) {
+      font-weight: 700;
+    }
+  }
+
+  &__features {
+    @include m.flex-column(v.$space-md);
+    align-items: flex-start;
+    list-style: none;
+    padding: 0;
+    font-size: v.$font-md;
+    text-align: left;
+
+    li {
+      display: flex;
+      gap: v.$space-lg;
+      margin-bottom: 0.5rem;
+
+      @include m.respond(xsmall) {
+        margin-left: 2rem;
+      }
+      @include m.respond(small) {
+        margin-left: 5rem;
+      }
+      @include m.respond(medium) {
+        margin-left: 8rem;
+      }
+      @include m.respond(large) {
+        margin-left: 11rem;
+      }
+      @include m.respond(xlarge) {
+        margin-left: 14rem;
+      }
+    }
+
+    @include m.respond(medium) {
+      font-size: v.$font-lg;
+    }
+  }
+
+  &__icon {
+    position: relative;
+    top: 0.2rem;
+    color: v.$green;
+    font-size: 1.2em;
+    flex-shrink: 0;
+  }
+}

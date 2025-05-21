@@ -1,0 +1,31 @@
+@use '../variables' as v;
+
+.aam_page {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: v.$black;
+}
+
+.aam_content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  transition: gap 0.5s ease-in;
+
+  &.stretch {
+    gap: 3rem;
+  }
+}
+
+.aam_main,
+.aam_header,
+.aam_section1,
+.aam_section2,
+.aam_section3,
+.aam_footer {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 1380px;
+  padding-inline: 1rem;
+}

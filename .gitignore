@@ -13,6 +13,9 @@ lerna-debug.log*
 /dist
 /.firebase
 .DS_Store
+/dataconnect
+.firebase*
+firebase*
 
 node_modules
 dist

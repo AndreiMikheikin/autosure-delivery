@@ -1,0 +1,47 @@
+@use 'sass:color';
+
+// Основные цвета
+$black: #000000;
+$metal: #F5F5DC;       // Кремово-бежевый (вместо серебристого металлика)
+$green: #80662e;       // Горчичный (золотой акцент)
+$gold: #92d51e;       // Тёмно-оливковый зелёный (ретро-зелёный)
+
+$metal-dark: #e29537;  // Коричнево-золотистый (вместо темного металла)
+$green-dark: #E6B63B;  // Светлый горчичный (вместо темного золотого)
+$gold-dark: #65852c;  // Очень тёмный оливковый (для затемнения зелёного)
+
+// Фон и текст
+$outline: color.change($gold, $alpha: 0.2);
+$bg-primary: color.scale($black, $lightness: 5%); // Темный фон
+$text-primary: $metal; // Основной текст
+$text-secondary: $gold; // Акцентный текст
+
+// Размеры отступов
+$space-xs: 0.3rem;
+$space-sm: 0.5rem;
+$space-md: 1rem;
+$space-lg: 1.5rem;
+$space-xl: 2rem;
+$space-2xl: 3rem;
+
+// Размеры шрифта
+$font-xs: 0.6rem;
+$font-sm: 0.8rem;
+$font-md: 1rem;
+$font-lg: 1.2rem;
+$font-xl: 1.6rem;
+$font-2xl: 2rem;
+$font-3xl: 3rem;
+
+// Радиусы (если будут использоваться)
+$radius-sm: 0.25rem;
+$radius-md: 0.5rem;
+$radius-lg: 1rem;
+
+// Ширины
+$content-max-width: 1380px;
+$content-narrow-width: 800px;
+
+// z-index уровни
+$z-content: 2;
+$z-overlay: 1;

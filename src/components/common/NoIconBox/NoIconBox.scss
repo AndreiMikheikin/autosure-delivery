@@ -1,0 +1,53 @@
+@use '../../../styles/variables' as v;
+@use '../../../styles/mixins' as *;
+
+.aam_noiconbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 13rem;
+  height: 10rem;
+  margin: 0 auto;
+  padding: 1rem;
+  background: linear-gradient(45deg, v.$green-dark, v.$gold-dark);
+  outline: 0.3rem solid v.$outline;
+  border-radius: 0.75rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+  @include respond(xsmall) {
+    width: 25rem;
+    height: 8rem;
+  }
+
+  @include respond(small) {
+    width:30rem;
+    height: 10rem;
+  }
+
+  @include respond(medium) {
+    width:20rem;
+    height: 12rem;
+  }
+
+  &:hover {
+    border-color: v.$gold;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3); // золото с прозрачностью
+    cursor: pointer;
+  }
+
+  &__label {
+    text-transform: uppercase;
+    white-space: pre-wrap;
+    margin-top: 0.6rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: v.$metal;
+    text-align: center;
+
+    @include respond(xsmall) {
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+  }
+}

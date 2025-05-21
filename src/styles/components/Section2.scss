@@ -1,0 +1,113 @@
+@use '../variables' as v;
+@use '../mixins' as m;
+@use './Section1.scss';
+
+.aam_section2 {
+  position: relative;
+  background: url('../../assets/images/parts-for-bg-vert.png') center/cover no-repeat;
+  z-index: 0;
+  height: auto;
+  padding: v.$space-xl;
+  overflow: hidden;
+
+  @include m.respond(medium) {
+    background: url('../../assets/images/parts-for-bg-vert.png') center/contain no-repeat;
+  }
+
+  @include m.respond(large) {
+    background: url('../../assets/images/parts-for-bg.png') center/contain no-repeat;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: v.$z-overlay;
+  }
+
+  &__conditions {
+    @include m.flex-column(v.$space-sm);
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    font-size: v.$font-sm;
+    z-index: v.$z-content;
+  }
+
+  &__title {
+    font-size: v.$font-lg;
+    margin-bottom: v.$space-xl;
+    color: v.$text-secondary;
+    z-index: v.$z-content;
+
+    @include m.respond(xsmall) {
+      font-size: v.$font-xl;
+      font-weight: 700;
+    }
+
+    @include m.respond(medium) {
+      font-size: v.$font-2xl;
+    }
+  }
+
+  &__subTitle {
+    font-size: v.$font-md;
+    margin-bottom: v.$space-md;
+    margin-left: v.$space-md;
+    color: v.$text-primary;
+    align-self: flex-start;
+    
+    @include m.respond(small) {
+      font-size: v.$font-lg;
+    }
+
+    @include m.respond(medium) {
+      font-size: v.$font-2xl;
+    }
+  }
+
+  &__features {
+    @include m.flex-column(v.$space-md);
+    align-items: flex-start;
+    text-align: left;
+    list-style-type: none;
+    list-style-position: outside;
+    padding: v.$space-md;
+
+    li {
+      display: flex;
+      gap: v.$space-lg;
+      margin-bottom: 0.5rem;
+      text-align: left;
+      font-size: v.$font-md;
+
+      @include m.respond(small) {
+        font-size: v.$font-lg;
+      }
+
+      @include m.respond(medium) {
+        font-size: v.$font-xl;
+      }
+    }
+
+    @include m.respond(xsmall) {
+      font-size: v.$font-md;
+    }
+
+    @include m.respond(small) {
+      font-size: v.$font-lg;
+    }
+
+    @include m.respond(medium) {
+      font-size: v.$font-xl;
+    }
+  }
+
+  &__icon {
+    position: relative;
+    top: 0.2rem;
+    color: v.$green;
+    font-size: 1.2em;
+    flex-shrink: 0;
+  }
+}

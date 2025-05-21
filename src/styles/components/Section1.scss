@@ -1,0 +1,69 @@
+@use '../variables' as v;
+@use '../mixins' as m;
+
+// aam_section1, 2, 3
+.aam_section1,
+.aam_section2,
+.aam_section3 {
+  position: relative;
+  max-width: v.$content-max-width;
+  margin: 0 auto;
+  padding: v.$space-xl;
+  background-color: v.$black;
+  color: v.$text-primary;
+  text-align: center;
+  display: flex;
+  @include m.flex-column(v.$space-2xl);
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    font-size: v.$font-lg;
+    margin-bottom: v.$space-xl;
+    color: v.$text-secondary;
+    z-index: v.$z-content;
+
+    @include m.respond(xsmall) {
+      font-size: v.$font-xl;
+      font-weight: 700;
+    }
+
+    @include m.respond(medium) {
+      font-size: v.$font-2xl;
+    }
+  }
+
+  &__step-group {
+    z-index: v.$z-content;
+    @include m.flex-column(v.$space-xl);
+    justify-content: center;
+    align-items: center;
+
+    @include m.respond(small) {
+      flex-direction: row;
+    }
+  }
+
+  &__steps {
+    @include m.flex-column(v.$space-md);
+
+    @include m.respond(small) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: v.$space-sm;
+    }
+  }
+
+  &__arrow {
+    @include m.flex-center;
+    font-size: v.$font-lg;
+    color: v.$text-primary;
+    transform: rotateZ(90deg);
+
+    @include m.respond(small) {
+      font-size: 1.5rem;
+      transform: rotateZ(0);
+    }
+  }
+}

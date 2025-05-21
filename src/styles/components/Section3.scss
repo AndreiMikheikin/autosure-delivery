@@ -1,0 +1,48 @@
+@use '../variables' as v;
+@use '../mixins' as m;
+@use './Section1.scss';
+
+
+.aam_section3 {
+  position: relative;
+  height: auto;
+  padding: v.$space-xl;
+
+  &__features {
+    @include m.flex-column(v.$space-md);
+    align-items: center;
+    text-align: left;
+    gap: v.$space-md;
+    list-style-type: decimal;
+    list-style-position: outside;
+    max-width: 80%;
+
+    li {
+      align-self: flex-start;
+      padding-left: v.$space-md;
+    }
+
+    @include m.respond(xsmall) {
+      font-size: v.$font-md;
+    }
+
+    @include m.respond(small) {
+      font-size: v.$font-lg;
+    }
+
+    @include m.respond(medium) {
+      font-size: v.$font-xl;
+    }
+  }
+
+  &__subTitle {
+    font-size: v.$font-md;
+    margin-bottom: v.$space-md;
+    color: v.$text-primary;
+    align-self: flex-start;
+
+    @include m.respond(small) {
+      font-size: v.$font-xl;
+    }
+  }
+}
